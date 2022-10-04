@@ -1,20 +1,43 @@
+<p align="center">
+	  <a href='https://jonasaacampos.github.io/portfolio/'>
+      <img alt="ASP Classic - Badge" src="https://img.shields.io/static/v1?color=blue&label=ASP%20NET&message=VB-Script&style=for-the-badge&logo=classic-asp"/>
+      </a>
+</p>
+
 <h1>ASP Classic</h1>
 
+<img alt="brain" src="img/asp-logo.png" width=150 align=right>
+
+<h2>Anotações e exemplos de sintáxe e lógica ASP em VBScript</h2>
+
+![](https://img.shields.io/badge/VbScript-informational?style=flat&logo=ASP&logoColor=white&color=blue)
+![](https://img.shields.io/badge/ASP-informational?style=flat&logo=ASP&logoColor=white&color=blue)
+
+
 > Anotaçõees de estudo sobre Active Server Pages, com finalidade de documentação de aprendizagem e compartilhamento de conhecimento
+
+[![](https://img.shields.io/badge/feito%20com%20%E2%9D%A4%20por-jaac-cyan)](https://jonasaacampos.github.io/portfolio/)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/jonasaacampos)
 
 <h2>Índice do conteúdo</h2>
 
 - [Como o ASP funciona?](#como-o-asp-funciona)
   - [Como escrever arquivos ASP](#como-escrever-arquivos-asp)
   - [Variáveis em ASP](#variáveis-em-asp)
-  - [Funíões e Condicionais](#funíões-e-condicionais)
-  - [Laãos de repetição](#laãos-de-repetição)
+  - [Condicionais](#condicionais)
+    - [If Then / Else | ElseIf Then](#if-then--else--elseif-then)
+    - [Select Case...](#select-case)
+  - [Funções](#funções)
+  - [Laçoos de repetição](#laçoos-de-repetição)
     - [For... Next](#for-next)
     - [For Each... Next](#for-each-next)
     - [Do... Loop](#do-loop)
   - [Entrada de dados pelo usuário](#entrada-de-dados-pelo-usuário)
   - [Cookies](#cookies)
 - [Objeto de Sessão (ASP Session Object)](#objeto-de-sessão-asp-session-object)
+- [Orientação a Objetos](#orientação-a-objetos)
+  - [POO no VbScript](#poo-no-vbscript)
+    - [Exemplo de classe em VBScript](#exemplo-de-classe-em-vbscript)
 - [Para saber mais](#para-saber-mais)
 
 ---
@@ -64,7 +87,59 @@
   - Variáveis de sessão: informações pertinentes é um único usuário, que estão disponível em toda a aplicação
   - Variávels de aplicação: armazenam informações de todos os usuários e estão disponíveis para uma aplicação específica
 
-### Funíões e Condicionais
+### Condicionais
+
+#### If Then / Else | ElseIf Then
+
+```vbscript
+ <%
+    Function horaAtual(hora)
+    
+        If hora <  11 Then
+            response.write("Bom dia")
+        ElseIf hora <= 18 Then
+            response.write("Boa tarde")
+        Else
+            Response.Write("Boa noite")
+        End If
+
+        Response.Write ("<br/>")
+    
+    End Function
+  %>
+```
+
+#### Select Case...
+
+```vbscript
+<!-- Condicional Select Case -->
+
+<%
+  Function diaDaSemana(numeroDiaDaSemana)
+    Select Case numeroDiaDaSemana
+      Case 1
+        Response.Write ("Segundou galera!<br/>")
+      Case 2
+        Response.Write ("Ter�a de fazer feira<br/>")
+      Case 3
+        Response.Write ("Quarta da <strong>feijoada</strong><br/>")
+      Case 4
+        Response.Write ("Quinta do bom humor<br/>")
+      Case 5
+        Response.Write ("Sextou!<br/>")
+      Case 6
+        Response.Write ("S�bado do louvor<br/>")
+      Case 7
+        Response.Write ("Domingo da fam�lia<br/>")
+      Case else
+        Response.Write ("<br/>Dia da semana inv�lido<br/>")
+
+    End Select
+  End Function
+%>
+```
+
+### Funções
 
 ```vbscript
 Function myfunction()
@@ -75,7 +150,7 @@ End Function
 
 [Exemplo de funíões e condicionais aqui.](03-Condicionais-e-funcoes.asp)
 
-### Laãos de repetição
+### Laçoos de repetição
 
 - `For... Next`: repete a instrução em determinado numero de vezes
 - `For Each... Next`: repete a instrução para cada item do array
@@ -142,7 +217,7 @@ Do
   some code
 Loop Until i=10
 
-'Sair do laão Do'
+'Sair do laço Do'
 Do Until i=10
   i=i-1
   If i<10 Then Exit Do
@@ -152,7 +227,7 @@ Loop
 
 ### Entrada de dados pelo usuário
 
-> Os métodos Request.QueryString e Request.Form são usados para receber dados que o usuário inseriu um um formulírio na p�gina
+> Os métodos Request.QueryString e Request.Form são usados para receber dados que o usuário inseriu um um formulírio na página
 
 - `Request.QueryString` : Coleta valores utilizando a requisição **GET**
 - `Request.Form` : Coleta valores utilizando a requisição **POST**
@@ -191,21 +266,49 @@ Loop
 Session.Abandon
 %>
 ```
+## Orientação a Objetos
+
+> O Visual basic **não é** uma linguagem pensada para Programação Orientada a Objetos (POO), mas podemos utilizar *alguns dos princípios* da POO em códigos VBScript dentro do ASP.
+
+ - Objeto é uma idéia, uma abstração escrita em código
+ - Instância é a representação lógica de um objeto, é 'o nascimento' do objeto
+ - Atributos: personalidade do objeto
+ - Métodos: ações que um objeto pode executar
+ - Construtor: é o método especial executado automaticamente quando o objeto é criado (instanciado)
+ - Herança: agrupamento lógico hierárquico de classes e objetos
 
 
+### POO no VbScript
 
+ - Apenas um único construtor é aceito por classe
+ - O construtor não aceita parâmetros
+ - não aceita herança
 
+#### Exemplo de classe em VBScript
 
+```vb
+'classe privada
+Private m_Name
 
+' métodos acessores
+' GET
+Public Property Get Name()  
+    Name = m_Name
+End Property
 
-
-
-
-
+' LET (também podemos usar o SET como método)
+Public Property Let Name(sName)
+    m_Name = sName
+End Property
+```
 
 
 
 
 ## Para saber mais
 
-https://www.w3schools.com/asp/asp_introduction.asp
+- [ASP Tutorial - W3C Schools](https://www.w3schools.com/asp/asp_introduction.asp)
+- [Using Object-Oriented Programming with VBScript](https://www.oreilly.com/library/view/designing-active-server/0596000448/ch04s02.html)
+- [VbScript/ASP Classic good OOP Pattern](https://stackoverflow.com/questions/12246278/vbscript-asp-classic-good-oop-pattern)
+- [Object Oriented ASP: Using Classes in Classic ASP](https://www.codeguru.com/dotnet/object-oriented-asp-using-classes-in-classic-asp/)
+
