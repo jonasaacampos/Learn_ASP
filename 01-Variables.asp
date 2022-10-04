@@ -7,7 +7,7 @@
     <%
         Option Explicit
         Dim issoEUmaVariavel
-        issoEUmaVariavel = "Variável com declaração explícita"
+        issoEUmaVariavel = "VariÃ¡vel com declaraÃ§Ã£o explÃ­cita"
     %>
 
     <%=issoEUmaVariavel %>
