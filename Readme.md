@@ -38,6 +38,8 @@
 - [Orientação a Objetos](#orientação-a-objetos)
   - [POO no VbScript](#poo-no-vbscript)
     - [Exemplo de classe em VBScript](#exemplo-de-classe-em-vbscript)
+- [Funções](#funções-1)
+  - [VarType()](#vartype)
 - [Para saber mais](#para-saber-mais)
 
 ---
@@ -120,7 +122,7 @@
       Case 1
         Response.Write ("Segundou galera!<br/>")
       Case 2
-        Response.Write ("Ter�a de fazer feira<br/>")
+        Response.Write ("Terça de fazer feira<br/>")
       Case 3
         Response.Write ("Quarta da <strong>feijoada</strong><br/>")
       Case 4
@@ -128,11 +130,11 @@
       Case 5
         Response.Write ("Sextou!<br/>")
       Case 6
-        Response.Write ("S�bado do louvor<br/>")
+        Response.Write ("Sábado do louvor<br/>")
       Case 7
-        Response.Write ("Domingo da fam�lia<br/>")
+        Response.Write ("Domingo da família<br/>")
       Case else
-        Response.Write ("<br/>Dia da semana inv�lido<br/>")
+        Response.Write ("<br/>Dia da semana inválido<br/>")
 
     End Select
   End Function
@@ -301,6 +303,23 @@ Public Property Let Name(sName)
     m_Name = sName
 End Property
 ```
+
+## Funções
+
+### VarType()
+> retorna o subtipo uma variável
+
+| **Constant**   | **Value** | **Description**                        |
+|----------------|-----------|-----------------------------------------|
+| **vbEmpty**    | 0         | Empty (uninitialized)                   |
+| **vbNull**     | 1         | Null (no valid data)                    |
+| **vbInteger**  | 2         | Integer                                 |
+| **vbLong**     | 3         | Long integer                            |
+| **vbSingle**   | 4         | Single-precision floating-point number  |
+| **vbDouble**   | 5         | Double-precision floating-point number  |
+| **vbCurrency** | 6         | Currency                                |
+| **vbDate**     | 7         | Date                                    |
+| **vbString**   | 8         | String                                  |
 
 
 
