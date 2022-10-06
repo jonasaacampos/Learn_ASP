@@ -1,5 +1,5 @@
 <p align="center">
-	  <a href='https://jonasaacampos.github.io/portfolio/'>
+   <a href='https://jonasaacampos.github.io/portfolio/'>
       <img alt="ASP Classic - Badge" src="https://img.shields.io/static/v1?color=blue&label=ASP%20NET&message=VB-Script&style=for-the-badge&logo=classic-asp"/>
       </a>
 </p>
@@ -13,22 +13,22 @@
 ![](https://img.shields.io/badge/VbScript-informational?style=flat&logo=ASP&logoColor=white&color=blue)
 ![](https://img.shields.io/badge/ASP-informational?style=flat&logo=ASP&logoColor=white&color=blue)
 
-
 > Anotaçõees de estudo sobre Active Server Pages, com finalidade de documentação de aprendizagem e compartilhamento de conhecimento
 
 [![](https://img.shields.io/badge/feito%20com%20%E2%9D%A4%20por-jaac-cyan)](https://jonasaacampos.github.io/portfolio/)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/jonasaacampos)
 
-<h2>Índice do conteúdo</h2>
+## Índice do conteúdo
 
+- [Índice do conteúdo](#índice-do-conteúdo)
 - [Como o ASP funciona?](#como-o-asp-funciona)
   - [Como escrever arquivos ASP](#como-escrever-arquivos-asp)
   - [Variáveis em ASP](#variáveis-em-asp)
   - [Condicionais](#condicionais)
     - [If Then / Else | ElseIf Then](#if-then--else--elseif-then)
-    - [Select Case...](#select-case)
+    - [Select Case](#select-case)
   - [Funções](#funções)
-  - [Laçoos de repetição](#laçoos-de-repetição)
+  - [Laços de repetição](#laços-de-repetição)
     - [For... Next](#for-next)
     - [For Each... Next](#for-each-next)
     - [Do... Loop](#do-loop)
@@ -39,10 +39,24 @@
   - [POO no VbScript](#poo-no-vbscript)
     - [Exemplo de classe em VBScript](#exemplo-de-classe-em-vbscript)
 - [Funções](#funções-1)
-  - [VarType()](#vartype)
+  - [Tipos de dados (verificação)](#tipos-de-dados-verificação)
+    - [VarType()](#vartype)
+  - [Tipos de dados (conversão de tipos)](#tipos-de-dados-conversão-de-tipos)
+    - [Int() e Fix()](#int-e-fix)
+  - [Funções de Tratamento (Strings)](#funções-de-tratamento-strings)
+  - [Funções de Tratamento de tempo (Data e Hora)](#funções-de-tratamento-de-tempo-data-e-hora)
+    - [DateDiff()](#datediff)
+    - [DateAdd()](#dateadd)
+    - [DatePart()](#datepart)
+    - [Parâmetros para data](#parâmetros-para-data)
+      - [*interval*](#interval)
+      - [*firstdayofweek*](#firstdayofweek)
+    - [*firstweekofyear*](#firstweekofyear)
+  - [Funções de Cálculo](#funções-de-cálculo)
 - [Para saber mais](#para-saber-mais)
-
+  
 ---
+
 
 ## Como o ASP funciona?
 
@@ -89,6 +103,10 @@
   - Variáveis de sessão: informações pertinentes é um único usuário, que estão disponível em toda a aplicação
   - Variávels de aplicação: armazenam informações de todos os usuários e estão disponíveis para uma aplicação específica
 
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
 ### Condicionais
 
 #### If Then / Else | ElseIf Then
@@ -111,7 +129,7 @@
   %>
 ```
 
-#### Select Case...
+#### Select Case
 
 ```vbscript
 <!-- Condicional Select Case -->
@@ -152,7 +170,11 @@ End Function
 
 [Exemplo de funíões e condicionais aqui.](03-Condicionais-e-funcoes.asp)
 
-### Laçoos de repetição
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
+### Laços de repetição
 
 - `For... Next`: repete a instrução em determinado numero de vezes
 - `For Each... Next`: repete a instrução para cada item do array
@@ -227,6 +249,10 @@ Loop
 
 ```
 
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
 ### Entrada de dados pelo usuário
 
 > Os métodos Request.QueryString e Request.Form são usados para receber dados que o usuário inseriu um um formulírio na página
@@ -250,7 +276,7 @@ Loop
 ### Cookies
 
 > Cookies são usados para identificar as ações de um usuário
- 
+
 [Veja um exemplo de Cookie em ação clicando aqui.](06-Cookies.asp)
 
 ## Objeto de Sessão (ASP Session Object)
@@ -268,23 +294,27 @@ Loop
 Session.Abandon
 %>
 ```
+
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
 ## Orientação a Objetos
 
-> O Visual basic **não é** uma linguagem pensada para Programação Orientada a Objetos (POO), mas podemos utilizar *alguns dos princípios* da POO em códigos VBScript dentro do ASP.
+> O Visual basic **não é** uma linguagem pensada para Programação Orientada a Objetos (POO), mas podemos utilizar _alguns dos princípios_ da POO em códigos VBScript dentro do ASP.
 
- - Objeto é uma idéia, uma abstração escrita em código
- - Instância é a representação lógica de um objeto, é 'o nascimento' do objeto
- - Atributos: personalidade do objeto
- - Métodos: ações que um objeto pode executar
- - Construtor: é o método especial executado automaticamente quando o objeto é criado (instanciado)
- - Herança: agrupamento lógico hierárquico de classes e objetos
-
+- Objeto é uma idéia, uma abstração escrita em código
+- Instância é a representação lógica de um objeto, é 'o nascimento' do objeto
+- Atributos: personalidade do objeto
+- Métodos: ações que um objeto pode executar
+- Construtor: é o método especial executado automaticamente quando o objeto é criado (instanciado)
+- Herança: agrupamento lógico hierárquico de classes e objetos
 
 ### POO no VbScript
 
- - Apenas um único construtor é aceito por classe
- - O construtor não aceita parâmetros
- - não aceita herança
+- Apenas um único construtor é aceito por classe
+- O construtor não aceita parâmetros
+- não aceita herança
 
 #### Exemplo de classe em VBScript
 
@@ -304,25 +334,196 @@ Public Property Let Name(sName)
 End Property
 ```
 
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
 ## Funções
 
-### VarType()
+### Tipos de dados (verificação)
+
+#### VarType()
+
 > retorna o subtipo uma variável
 
-| **Constant**   | **Value** | **Description**                        |
-|----------------|-----------|-----------------------------------------|
-| **vbEmpty**    | 0         | Empty (uninitialized)                   |
-| **vbNull**     | 1         | Null (no valid data)                    |
-| **vbInteger**  | 2         | Integer                                 |
-| **vbLong**     | 3         | Long integer                            |
-| **vbSingle**   | 4         | Single-precision floating-point number  |
-| **vbDouble**   | 5         | Double-precision floating-point number  |
-| **vbCurrency** | 6         | Currency                                |
-| **vbDate**     | 7         | Date                                    |
-| **vbString**   | 8         | String                                  |
+| **Constant**      | **Value** | **Description**                               |
+|-------------------|-----------|-----------------------------------------------|
+| **vbEmpty**       | 0         | Empty (uninitialized)                         |
+| **vbNull**        | 1         | Null (no valid data)                          |
+| **vbInteger**     | 2         | Integer                                       |
+| **vbLong**        | 3         | Long integer                                  |
+| **vbSingle**      | 4         | Single-precision floating-point number        |
+| **vbDouble**      | 5         | Double-precision floating-point number        |
+| **vbCurrency**    | 6         | Currency                                      |
+| **vbDate**        | 7         | Date                                          |
+| **vbString**      | 8         | String                                        |
+| **vbObject**      | 9         | Automation object                             |
+| **vbError**       | 10        | Error                                         |
+| **vbBoolean**     | 11        | Boolean                                       |
+| **vbVariant**     | 12        | Variant (used only with arrays of Variants)   |
+| **vbDataObject**  | 13        | A data-access object                          |
+| **vbByte**        | 17        | Byte                                          |
+| **vbArray**       | 8192      | Array                                         |
+
+Função que verificam o tipo de dado contido na variável e retorna `True` ou `False`
+
+```vb
+IsArray()
+IsNumeric()
+IsDate()
+IsEmpty()
+IsNull()
+IsObject()
+```
+
+### Tipos de dados (conversão de tipos)
+
+```vb
+Cboll() 'Converte uma expressão ou valor para Boolean
+cByte()
+cCur()  'Converte uma expressão oou valor para Currency
+cDate()
+cDbl()
+CInt()
+CLng()
+CSng()  'Converte uma expressão ou variável para Single
+CStr()
+```
+
+#### Int() e Fix()
+
+> retornam somente a parte inteira de um número
+
+- `Int()`: retorna o primeiro número **menor** ou igual
+- `Fix()`: retorna o primeiro número **maior** ou igual
+
+### Funções de Tratamento (Strings)
+
+```vb
+Asc()   'Retorna o código ANSI correspondente a primeira letra da string
+Chr()   'Retorna um caracter ao receber um código ANSI
+Len()   'Retorna o tamanho da string
+LCase() 'Retorna uma string convertida para caixa alta
+UCase() 'Retorna uma string convertida para caixa alta
+Left(string, length)  'Retorna x caractes a partir da esquerda de uma string
+Right(string, length) 'Retorna x caractes a partir da direita de uma string
+Mid(string, start[, length])  'Retorna uma string de n até n'
+String(number, character) 'Retorna uma string de n tamanho com o caracterer x
+StrComp(string1, string2[, compare]) 'Verifica se a string x está contida na string y
+                                      'o parâmetro opcional é 0 (texto exato) ou 1.
+```
+
+### Funções de Tratamento de tempo (Data e Hora)
+
+```vb
+Date()    'Retorna a data do sistema
+Time()    'Retorna a hora do sistema
+Day(date) 'Se o valor recebido por uma data, retorna o dia
+Month(Now)  'Se o valor recebido por uma data, retorna o o número do mês
+Now()    'Retorna a data e hora do sistema
+MonthName(month[, abbreviate]) 'Retorna o nome do mês, padrão para abreviação é False. MonthName(10, True) = Oct
+Hour()    'Se receber um valor time, retorna a hora
+Year()    'Se receber um valor date, retorna o ano
+WeekDay() 'Se receber um valor data, retorna o número do dia da semana
+WeekdayName(weekday, abbreviate, firstdayofweek)  'Retorna o nome do dia da semana. Por padrão os param. *abbreviate* é False e *firstDayOfWeek* é 1 (Sunday). WeekDayName(6, True) = Fry
+```
+
+#### DateDiff()
+
+>DateDiff(interval, date1, date2 [,firstdayofweek[, firstweekofyear]]) => recebe o tipo do intervalo, e calcula a difereça de valor entre duas datas
+
+A função a seguir retorna quantos dias determinada data possui de diferença em relação a data atual
+
+```vb
+Function DiffADate(theDate)
+   DiffADate = "Days from today: " & DateDiff("d", Now, theDate)
+End Function
+```
+
+#### DateAdd()
+
+> DateAdd(interval, number, date) => Adiciona ou remove um determinado intervalo de uma data
+
+Abaixo, a nova variável de data recebe mais um mês. Para mais parâmetros de data consulte a sessão [Parâmetros para data](#parâmetros-para-data).
+
+```vb
+NewDate = DateAdd("m", 1, "31-Jan-95")
+```
+
+#### DatePart()
+
+> DatePart(interval, date[, firstdayofweek[, firstweekofyear]]) => retorna um intervalo de tempo em uma medida específica.
+
+É uma função única que agrega as funções
+
+ - `Year `
+ - `Month `
+ - `Day `
+ - `Hour`
+ - `Minute`
+ - `Second`
+
+Basta inserir o parâmetro desejado que deseja que a função DatePart() retornará o trecho desejado da data (consulte a sessão [Parâmetros para data](#parâmetros-para-data).)
+
+[Exemplo da Função DatePart()](functions/DatePart.asp)
+
+#### Parâmetros para data
+
+<details>
+  <summary>
+    <strong>Clique para expandir</strong>
+  </summary>
+
+##### *interval*
+
+| **Setting** | **Description**            |
+|-------------|----------------------------|
+| **yyyy**    | Year                       |
+| **q**       | Quarter                    |
+| **m**       | Month                      |
+| **y**       | Day of year (same as Day)  |
+| **d**       | Day                        |
+| **w**       | Weekday                    |
+| **ww**      | Week of year               |
+| **h**       | Hour                       |
+| **n**       | Minute                     |
+| **s**       | Second                     |
+
+##### *firstdayofweek*
+
+| **Constant**             | **Value** | **Description**                                   |
+|--------------------------|-----------|---------------------------------------------------|
+| **vbUseSystemDayOfWeek** | 0         | Use National Language Support (NLS) API setting.  |
+| **vbSunday**             | 1         | Sunday (default)                                  |
+| **vbMonday**             | 2         | Monday                                            |
+| **vbTuesday**            | 3         | Tuesday                                           |
+| **vbWednesday**          | 4         | Wednesday                                         |
+| **vbThursday**           | 5         | Thursday                                          |
+| **vbFriday**             | 6         | Friday                                            |
+| **vbSaturday**           | 7         | Saturday                                          |
+
+#### *firstweekofyear*
+
+| **Constant**        | **Value** | **Description**                                                   |
+|---------------------|-----------|-------------------------------------------------------------------|
+| **vbUseSystem**     | 0         | Use National Language Support (NLS) API setting.                  |
+| **vbFirstJan1**     | 1         | Start with the week in which January 1 occurs (default).          |
+| **vbFirstFourDays** | 2         | Start with the week that has at least four days in the new year.  |
+| **vbFirstFullWeek** | 3         | Start with the first full week of the new year.                   |
+
+</details>
 
 
 
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
+### Funções de Cálculo
+
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
 
 ## Para saber mais
 
@@ -330,4 +531,3 @@ End Property
 - [Using Object-Oriented Programming with VBScript](https://www.oreilly.com/library/view/designing-active-server/0596000448/ch04s02.html)
 - [VbScript/ASP Classic good OOP Pattern](https://stackoverflow.com/questions/12246278/vbscript-asp-classic-good-oop-pattern)
 - [Object Oriented ASP: Using Classes in Classic ASP](https://www.codeguru.com/dotnet/object-oriented-asp-using-classes-in-classic-asp/)
-
