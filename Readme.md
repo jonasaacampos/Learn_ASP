@@ -53,6 +53,8 @@
       - [*firstdayofweek*](#firstdayofweek)
     - [*firstweekofyear*](#firstweekofyear)
   - [Funções de Cálculo](#funções-de-cálculo)
+- [Eventos no VBScript](#eventos-no-vbscript)
+  - [Classes](#classes)
 - [Para saber mais](#para-saber-mais)
   
 ---
@@ -160,6 +162,9 @@
 ```
 
 ### Funções
+> Funções e subrotinas ajudam para melhor manutenção do código
+
+A diferença básica entre uma `Funcion` e `Sub` é que a função sempre retorna algo. Sub-rotinas seriam como funções `void` no Java.
 
 ```vbscript
 Function myfunction()
@@ -168,7 +173,7 @@ Function myfunction()
 End Function
 ```
 
-[Exemplo de funíões e condicionais aqui.](03-Condicionais-e-funcoes.asp)
+[Exemplo de funções e condicionais aqui.](03-Condicionais-e-funcoes.asp)
 
 [📖 voltar para o índice 📖](#índice-do-conteúdo)
 
@@ -520,6 +525,45 @@ Basta inserir o parâmetro desejado que deseja que a função DatePart() retorna
 ---
 
 ### Funções de Cálculo
+
+
+[📖 voltar para o índice 📖](#índice-do-conteúdo)
+
+---
+
+## Eventos no VBScript
+> evento é qualquer ação que o usuário realize em uma página.
+
+Dentro do ASP, temos Quatro tipos de evento:
+
+- Window
+- Document
+- Form
+- Element
+
+Para criar procedimentos (funções ou sub-rotinas) que responda a eventos, usamos a sintaxe:
+
+```vb
+
+<SCRIPT ID=clientEventHandlerVBS LANGUAGE= vbscript>
+<!--
+  Sub NomeDoObjeto_NomeDoEvento()
+    ...
+    ...
+    ...
+  End Sub
+-->
+</SCRIPT>
+```
+
+### Classes
+
+
+
+
+
+
+
 
 [📖 voltar para o índice 📖](#índice-do-conteúdo)
 
